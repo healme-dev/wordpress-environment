@@ -2,9 +2,9 @@
 
 # Variable definitions
 DOCKER_DIR="/docker"
-DOCKER_REPO_DIR="${DOCKER_DIR}/wordpress-nginx-docker"
+DOCKER_REPO_DIR="${DOCKER_DIR}/wordpress-caddy-docker"
 DOCKER_ENV_FILE="${DOCKER_REPO_DIR}/.env"
-DOCKER_REPO_URL="https://github.com/healme-dev/wordpress-nginx-docker.git"
+DOCKER_REPO_URL="https://github.com/healme-dev/wordpress-caddy-docker.git"
 DOCKER_CE_REPO_URL="https://download.docker.com/linux/ubuntu/gpg"
 PACKAGES="docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin git zip unzip vim openssl"
 
