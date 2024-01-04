@@ -38,7 +38,7 @@ echo \
 sudo apt-get update -y 
 
 export DEBIAN_FRONTEND=noninteractive
-sudo apt-get upgrade -yq -o Dpkg::Options::="--force-confnew"
+sudo -E apt-get upgrade -yq -o Dpkg::Options::="--force-confnew"
 sudo apt-get install -y needrestart
 sudo needrestart -r a
 
