@@ -66,3 +66,11 @@ fi
 
 # Execute Docker Compose
 sudo -u docker -i docker compose -f ${DOCKER_REPO_DIR}/docker-compose.yml pull
+
+if [ -n "$1" ]; then 
+    domain=$1
+    sudo -u docker sed "s/{your_domain}/$domain/" /docker/wordpress-caddy-docker/caddy/Caddyfile.template | sudo -u docker tee /docker/wordpress-caddy-docker/caddy/Caddyfile > /dev/null
+    echo "Caddyfile has been created with the domain: $domain"
+
+    sudo -u docker -i bash -c "cd ${DOCKER_REPO_DIR} && docker compose up -d"
+fi
