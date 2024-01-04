@@ -35,7 +35,12 @@ echo \
   "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-sudo apt-get update -y
+sudo apt-get update -y 
+
+export DEBIAN_FRONTEND=noninteractive
+sudo apt upgrade -yq
+sudo apt install -y needrestart
+sudo needrestart -r a
 
 #sudo apt-get update && sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" && sudo apt-get update
 #curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
