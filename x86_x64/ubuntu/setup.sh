@@ -38,8 +38,8 @@ echo \
 sudo apt-get update -y 
 
 export DEBIAN_FRONTEND=noninteractive
-sudo apt upgrade -yq
-sudo apt install -y needrestart
+sudo apt-get upgrade -yq -o Dpkg::Options::="--force-confnew"
+sudo apt-get install -y needrestart
 sudo needrestart -r a
 
 #sudo apt-get update && sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" && sudo apt-get update
